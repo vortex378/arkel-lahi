@@ -54,7 +54,8 @@ export function Contact() {
     { icon: Mail, label: "Email", href: `mailto:${personalInfo.email}`, gradient: "from-blue-500 to-cyan-500" },
     { icon: MessageCircle, label: "WhatsApp", href: personalInfo.whatsapp, gradient: "from-green-500 to-emerald-500" },
     { icon: Linkedin, label: "LinkedIn", href: personalInfo.linkedin, gradient: "from-blue-600 to-blue-400" },
-    { icon: Github, label: "GitHub", href: personalInfo.github, gradient: "from-purple-500 to-pink-500" },
+    { icon: Github, label: "GitHub · vortex378", href: personalInfo.github, gradient: "from-purple-500 to-pink-500" },
+    { icon: Github, label: "GitHub · silivex", href: personalInfo.githubAlt, gradient: "from-fuchsia-500 to-rose-500" },
   ]
 
   return (

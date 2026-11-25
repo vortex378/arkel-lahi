@@ -86,7 +86,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-lg text-white/80 max-w-xl leading-relaxed"
             >
-              Delivering enterprise-grade web applications and cloud solutions with 9+ years of experience. Specializing
+              Delivering enterprise-grade web applications and cloud solutions with 8+ years of experience. Specializing
               in Azure cloud-native development and system integration.
             </motion.p>
 

@@ -28,7 +28,8 @@ export function Footer() {
   ]
 
   const socialLinks = [
-    { icon: Github, href: personalInfo.github, label: "GitHub", gradient: "from-gray-700 to-gray-900" },
+    { icon: Github, href: personalInfo.github, label: "GitHub (vortex378)", gradient: "from-gray-700 to-gray-900" },
+    { icon: Github, href: personalInfo.githubAlt, label: "GitHub (silivex)", gradient: "from-gray-600 to-gray-800" },
     { icon: Linkedin, href: personalInfo.linkedin, label: "LinkedIn", gradient: "from-blue-600 to-blue-800" },
     { icon: Mail, href: `mailto:${personalInfo.email}`, label: "Email", gradient: "from-primary to-secondary" },
   ]

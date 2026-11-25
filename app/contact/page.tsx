@@ -90,9 +90,15 @@ export default function ContactPage() {
               },
               {
                 icon: Github,
-                title: "GitHub",
+                title: "GitHub · vortex378",
                 color: "purple",
                 href: personalInfo.github,
+              },
+              {
+                icon: Github,
+                title: "GitHub · silivex",
+                color: "purple",
+                href: personalInfo.githubAlt,
               },
             ].map((item, index) => (
               <motion.a

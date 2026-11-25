@@ -1,18 +1,21 @@
 "use client"
 
-import { motion, animate } from "framer-motion"
+import { motion, animate, useInView } from "framer-motion"
 import { achievements } from "@/content/data"
 import { GradientCard } from "@/components/ui/gradient-card"
 import { useEffect, useRef } from "react"
 
 function Counter({ value, duration = 2 }: { value: string; duration?: number }) {
   const nodeRef = useRef<HTMLSpanElement>(null)
+  // Count up only once the number is actually on screen.
+  const inView = useInView(nodeRef, { once: true, margin: "-10% 0px" })
   const numericValue = Number.parseInt(value.replace(/\D/g, ""))
   const hasPlus = value.includes("+")
 
   useEffect(() => {
     const node = nodeRef.current
-    if (!node || isNaN(numericValue)) return
+    if (!node || !inView || isNaN(numericValue)) return
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
 
     const controls = animate(0, numericValue, {
       duration,
@@ -22,13 +25,11 @@ function Counter({ value, duration = 2 }: { value: string; duration?: number }) 
     })
 
     return () => controls.stop()
-  }, [numericValue, hasPlus, duration])
+  }, [inView, numericValue, hasPlus, duration])
 
-  if (isNaN(numericValue)) {
-    return <span>{value}</span>
-  }
-
-  return <span ref={nodeRef}>0</span>
+  // Server-rendered with the real value, so crawlers, link previews and
+  // no-JS visitors never see "0".
+  return <span ref={nodeRef}>{value}</span>
 }
 
 export function Achievements() {
